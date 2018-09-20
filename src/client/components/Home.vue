@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <Logo :description="logoDescription" />
     <div class="wrapper">
       <div class="container-chat">
         <div class="history">
@@ -26,7 +25,6 @@
 
 <script>
 import axios from 'axios';
-import Logo from './Logo.vue';
 import Message from './Message.vue';
 
 export default {

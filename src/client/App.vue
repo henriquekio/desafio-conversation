@@ -14,7 +14,6 @@ export default {
 
 <style>
   body {
-    background-image: url('./assets/background.png');
     font-family: Courier, "Courier New", "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
     font-size: 2vw;
     position: fixed;
