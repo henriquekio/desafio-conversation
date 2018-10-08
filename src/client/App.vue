@@ -7,15 +7,13 @@
 </template>
 
 <script>
+import  '/assets/sass/main.sass'
+
 export default {
   name: 'app',
 };
 </script>
 
 <style>
-  body {
-    font-family: Courier, "Courier New", "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-    font-size: 2vw;
-    position: fixed;
-  }
+
 </style>
