@@ -20,9 +20,9 @@
             };
         },
         computed: {
-          componentView() {
-              return this.currentComponent;
-          },
+            componentView() {
+                return this.currentComponent;
+            },
         },
     };
 </script>
