@@ -1,12 +1,17 @@
 <template>
-<div class="chat-circle">
-
-</div>
+    <div class="chat-circle" @click="openChat">
+        <i class="material-icons">message</i>
+    </div>
 </template>
 
 <script>
     export default {
-      name: 'Button',
+    name: 'Button',
+    methods: {
+        openChat(){
+
+        }
+    },
     };
 </script>
 
