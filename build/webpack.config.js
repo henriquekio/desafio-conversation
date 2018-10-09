@@ -54,14 +54,21 @@ module.exports = {
             {
                 test: /\.sass$/,
                 use: [
-                    'vue-style-loader',
+                    {
+                        loader: 'vue-style-loader'
+                    },
                     {
                         loader: 'css-loader',
-                        options: { modules: true }
+                        options: {modules: true}
                     },
-                    'sass-loader'
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            indentedSyntax: true
+                        }
+                    }
                 ]
-            },
+            }
         ]
     }
 };

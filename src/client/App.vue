@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import  '/assets/sass/main.sass'
 
 export default {
   name: 'app',
