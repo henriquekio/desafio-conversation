@@ -1,11 +1,7 @@
 <template>
-  <div class="container-message" :class="containerClass">
-    <div class="chat-info" :class="chatInfoClass" v-if="isBotType()"></div>
-    <div class="box" :class="boxClass">
-      {{text}}
+    <div class="chat-msg" :class="containerClass">
+        <div class="cm-msg-text">{{text}}</div>
     </div>
-    <div class="chat-info" :class="chatInfoClass" v-if="isUserType()"></div>
-  </div>
 </template>
 
 <script>
@@ -22,21 +18,20 @@
         return this.type === 'bot';
       },
     },
-
     computed: {
-      containerClass: function() { // eslint-disable-line
+      containerClass: function () { // eslint-disable-line
         return {
           sent: this.isUserType(),
           received: this.isBotType(),
         };
       },
-      boxClass: function() { // eslint-disable-line
+      boxClass: function () { // eslint-disable-line
         return {
           user: this.isUserType(),
           bot: this.isBotType(),
         };
       },
-      chatInfoClass: function() { // eslint-disable-line
+      chatInfoClass: function () { // eslint-disable-line
         return {
           'user-info': this.isUserType(),
           'bot-info': this.isBotType(),
@@ -47,143 +42,38 @@
 </script>
 
 <style scoped>
-  @import url('../colors.css');
-
-  .container-message {
-    display: flex;
-    padding: 5px;
-  }
-
-  .container-message.sent {
-    justify-content: flex-end;
-    text-align: right;
-    color: var(--light-blue);
-  }
-  
-  .container-message.sent > .message {
-    border: 1px solid var(--light-blue);
-  }
-
-  .container-message.received {
-    justify-content: flex-start;
-    text-align: left;
-    color: var(--light-green);
-  }
-
-  .container-message.received > .message {
-    border: 1px solid var(--light-green);
-  }
-
-  .box {
-    width: 65%;
-    margin: 2vh auto;
-    padding: 3vh;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    font-size: 1.2em;
-    word-wrap: break-word;
-    margin-top: 6vh;
-  }
-
-  .box.user {
-    background: var(--light-blue);
-    border: 1px solid var(--light-bllue);
-  }
-
-  .box.bot {
-    background: var(--light-green);
-    border: 1px solid var(--light-green);
-  }
-
-
-  .user:before {
-    content: "";
-    position: absolute;
-    border-left: 9px solid var(--light-blue);
-    border-right: 10px solid transparent;
-    border-top: 11px solid var(--light-blue);
-    border-bottom: 9px solid transparent;
-    right: -18px;
-    top: 0px;
-  }
-
-  .bot:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 9px solid transparent;
-    border-right: 10px solid var(--light-green);
-    border-top: 11px solid var(--light-green);
-    border-bottom: 9px solid transparent;
-    left: -18px;
-    top: -1px;
-  }
-
-  .chat-info {
-    font-size: 1.5em;
-  }
-
-  .chat-info {
-    width: 5vw;
-    height: 5vw;
-  }
-
-  .chat-info.user-info {
-    background: url('../assets/user.svg');
-    background-size: contain;
-
-  }
-
-  .chat-info.bot-info {
-    background: url('../assets/bot.svg');
-    background-size: contain;
-  }
-
-  .message {
-    width: 70%;
-    padding: 5px;
-    font-size: 1.2em;
-    border-radius: 6px;
-  }
-
-  .history {
-    height: 85%;
-    overflow-y: auto;
-  }
-
-  @media screen and (orientation: landscape) {
-
-    .box {
-      font-size: 0.6em;
+    .chat-msg.user > .msg-avatar img {
+        width:45px;
+        height:45px;
+        border-radius:50%;
+        float:left;
+        width:15%;
     }
-
-    .container-message {
-      width: 75%;
+    .chat-msg.bot > .msg-avatar img {
+        width:45px;
+        height:45px;
+        border-radius:50%;
+        float:right;
+        width:15%;
     }
-
-    .container-message.sent {
-      margin-left: 20%;
+    .cm-msg-text {
+        background:white;
+        padding:10px 15px 10px 15px;
+        color:#666;
+        max-width:75%;
+        float:left;
+        margin-left:10px;
+        position:relative;
+        margin-bottom:20px;
+        border-radius:30px;
     }
-
-    .container-message.received {
-      margin-left: 5%;
+    .chat-msg {
+        clear:both;
     }
-  }
-
-  @media screen and (orientation: portrait) {
-    .box, .message {
-      font-size: 2em;
-      margin-top: 2vh;
+    .chat-msg.sent > .cm-msg-text {
+        float:right;
+        margin-right:10px;
+        background: #1976d2;
+        color:white;
     }
-
-    .chat-info {
-      width: 8vw;
-      height: 8vw;
-    }
-
-  }
-
-
 </style>
