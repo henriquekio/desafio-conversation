@@ -15,7 +15,7 @@
     },
     data() {
       return {
-        currentComponent: 'Chat',
+        currentComponent: 'Button',
       };
     },
     computed: {
