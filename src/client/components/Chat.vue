@@ -11,7 +11,7 @@
             </div><!--chat-log -->
         </div>
         <div class="input-container">
-            <form>
+            <form autocomplete="off">
                 <input v-model="currentMessage" type="text" id="chat-input" placeholder="Digite sua mensagem...">
                 <button @click="talkToBot" class="chat-submit"><i class="material-icons">send</i></button>
             </form>

@@ -1,7 +1,9 @@
 <template>
-    <div class="chat-msg" :class="containerClass">
-        <div class="cm-msg-text">{{text}}</div>
-    </div>
+    <transition name="fade-in">
+        <div class="chat-msg" :class="containerClass">
+            <div class="cm-msg-text">{{text}}</div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -42,38 +44,50 @@
 </script>
 
 <style scoped>
+    .fade-in-enter, .fade-in-leave-to {
+        opacity: 0;
+    }
+
+    .fade-in-enter-active, .fade-in-leave-active {
+        transition: .8s;
+    }
+
     .chat-msg.user > .msg-avatar img {
-        width:45px;
-        height:45px;
-        border-radius:50%;
-        float:left;
-        width:15%;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        float: left;
+        width: 15%;
     }
+
     .chat-msg.bot > .msg-avatar img {
-        width:45px;
-        height:45px;
-        border-radius:50%;
-        float:right;
-        width:15%;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        float: right;
+        width: 15%;
     }
+
     .cm-msg-text {
-        background:white;
-        padding:10px 15px 10px 15px;
-        color:#666;
-        max-width:75%;
-        float:left;
-        margin-left:10px;
-        position:relative;
-        margin-bottom:20px;
-        border-radius:30px;
+        background: white;
+        padding: 10px 15px 10px 15px;
+        color: #666;
+        max-width: 75%;
+        float: left;
+        margin-left: 10px;
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 30px;
     }
+
     .chat-msg {
-        clear:both;
+        clear: both;
     }
+
     .chat-msg.sent > .cm-msg-text {
-        float:right;
-        margin-right:10px;
+        float: right;
+        margin-right: 10px;
         background: #1976d2;
-        color:white;
+        color: white;
     }
 </style>
