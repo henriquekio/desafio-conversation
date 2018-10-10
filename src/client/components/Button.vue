@@ -5,14 +5,15 @@
 </template>
 
 <script>
-    export default {
+
+  export default {
     name: 'Button',
     methods: {
-        openChat(){
-
-        }
+      openChat() {
+        this.$emit('changeComponent', { componentName: 'Chat' });
+      },
     },
-    };
+  };
 </script>
 
 <style scoped>
